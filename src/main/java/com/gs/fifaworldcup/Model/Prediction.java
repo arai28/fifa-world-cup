@@ -20,7 +20,7 @@ public class Prediction {
     private String kerb;
 
     private String name;
-//    private Integer rank;
+    private Integer rank;
     private Integer score;
 
     private String GroupATopper;
@@ -47,6 +47,18 @@ public class Prediction {
     private String GroupHTopper;
     private String GroupHRunnerUp;
 
+
+    private String RoundOf16_1;
+    private String RoundOf16_2;
+    private String RoundOf16_3;
+    private String RoundOf16_4;
+    private String RoundOf16_5;
+    private String RoundOf16_6;
+    private String RoundOf16_7;
+    private String RoundOf16_8;
+
+
+
     private String QF1Winner;
     private String QF2Winner;
     private String QF3Winner;
@@ -57,4 +69,7 @@ public class Prediction {
 
     private String Champion;
 
+    public Prediction(String kerb) {
+        this.kerb = kerb;
+    }
 }

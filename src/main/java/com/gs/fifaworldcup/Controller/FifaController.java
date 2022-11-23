@@ -20,12 +20,12 @@ public class FifaController {
     }
 
     @GetMapping("/mypredict/{kerb}")
-    public Prediction myprediction(@RequestParam String kerb) {
+    public Prediction myprediction(@PathVariable String kerb) {
         return fifaService.myprediction(kerb);
     }
 
-    @GetMapping("/leaderboard")
-    public List<LeaderBoardEntry> getLeaderBoard() {
-        return fifaService.getLeaderBoard();
+    @GetMapping("/leaderboard/{kerb}")
+    public List<LeaderBoardEntry> getLeaderBoard(@PathVariable String kerb) {
+        return fifaService.getLeaderBoard(kerb);
     }
 }
