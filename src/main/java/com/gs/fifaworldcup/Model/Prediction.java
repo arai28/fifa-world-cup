@@ -19,6 +19,10 @@ public class Prediction {
     @Id
     private String kerb;
 
+    private String name;
+//    private Integer rank;
+    private Integer score;
+
     private String GroupATopper;
     private String GroupARunnerUp;
 

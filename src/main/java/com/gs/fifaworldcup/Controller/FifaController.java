@@ -1,11 +1,12 @@
 package com.gs.fifaworldcup.Controller;
 
+import com.gs.fifaworldcup.Model.LeaderBoardEntry;
 import com.gs.fifaworldcup.Model.Prediction;
 import com.gs.fifaworldcup.Service.FifaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class FifaController {
@@ -16,5 +17,15 @@ public class FifaController {
     @PostMapping("/predict")
     public void registerPredictions(@RequestBody Prediction prediction) {
         fifaService.registerPredictions(prediction);
+    }
+
+    @GetMapping("/mypredict/{kerb}")
+    public Prediction myprediction(@RequestParam String kerb) {
+        return fifaService.myprediction(kerb);
+    }
+
+    @GetMapping("/leaderboard")
+    public List<LeaderBoardEntry> getLeaderBoard() {
+        return fifaService.getLeaderBoard();
     }
 }
